@@ -7,5 +7,5 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         #如果是安全的方法（如GET），直接返回True
         if request.method in permissions.SAFE_METHODS:
             return True
-        # 如果是不安全的方法（如DELETE），只有发出请求的是拥有者才返回True
+        # 如果是不安全的方法（如DELETE,POST），只有发出请求的是拥有者才返回True
         return obj.owner == request.user

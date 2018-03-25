@@ -8,7 +8,6 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer):
 
     #owner设为ReadOnlyField
     owner=serializers.ReadOnlyField(source='owner.username')
-
     #以Article为模板，并规定有哪些字段
     class Meta:
         model=Article
